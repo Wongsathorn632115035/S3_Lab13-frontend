@@ -78,6 +78,7 @@ export default {
     handleLogin(user) {
       console.log(user)
       AuthService.login(user).then(() => {
+        console.log(12)
         this.$router.go()
       })
     }
