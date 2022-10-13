@@ -26,5 +26,22 @@ export default {
   },
   getUser() {
     return JSON.parse(localStorage.getItem('user'))
+  },
+  hasRoles(roles) {
+    console.log(GStore.currentUser)
+    if (GStore.currentUser && roles) {
+      let containRoles = GStore.currentUser.authorities.filter((authority) =>
+        roles.includes(authority)
+      )
+      console.log(GStore.currentUser)
+
+      if (containRoles.length > 0) {
+        return true
+      } else {
+        return false
+      }
+    } else {
+      return false
+    }
   }
 }
