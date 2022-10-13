@@ -3,7 +3,10 @@ import App from './App.vue'
 import router from './router'
 import GStore from './store'
 import 'nprogress/nprogress.css'
-
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+// import { FontAwesomeIcon } from './plugins/font-awesome'
+import '@/services/AxiosInterceptorSetup.js'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 
@@ -23,4 +26,8 @@ requireComponent.keys().forEach((fileName) => {
   app.component(componentName, componentConfig.default || componentConfig)
 })
 
-app.use(router).provide('GStore', GStore).mount('#app')
+app
+  .use(router)
+  // .component('font-awesome-icon', FontAwesomeIcon)
+  .provide('GStore', GStore)
+  .mount('#app')
