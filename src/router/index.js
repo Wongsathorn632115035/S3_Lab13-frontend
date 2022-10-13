@@ -13,12 +13,18 @@ import GStore from '@/store'
 import EventService from '@/services/EventService'
 import OrganizerService from '@/services/OrganizerService.js'
 import Login from '@/views/LoginFormView.vue'
+import RegisterView from '@/views/RegisterView.vue'
 const routes = [
   {
     path: '/',
     name: 'EventList',
     component: EventListView,
     props: (route) => ({ page: parseInt(route.query.page) || 1 })
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: RegisterView
   },
   {
     path: '/about',

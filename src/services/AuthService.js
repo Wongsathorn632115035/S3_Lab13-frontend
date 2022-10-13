@@ -1,6 +1,13 @@
 import apiClient from '@/services/AxiosClient.js'
 import GStore from '@/store'
 export default {
+  register(user) {
+    return apiClient.post('/register', {
+      username: user.username,
+      password: user.password,
+      email: user.email
+    })
+  },
   login(user) {
     return apiClient
       .post('/auth', {
