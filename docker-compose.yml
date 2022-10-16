@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+    web:
+        image: "markwst/331-security:latest"
+        ports:
+            - 4000:80
